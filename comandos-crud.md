@@ -112,6 +112,37 @@ VALUES(
 );
 ```
 
+### Select em notícias
+
+```sql
+SELECT titulo, data FROM noticias;
+```
+
+```sql
+SELECT titulo, data FROM noticias ORDER BY data DESC;
+-- Usamos o ORBER BY data DESC para classificar em ordem 
+-- decrescente pela data
+```
+
+### SELECT com JOIN (consulta com junção de tabelas)
+
+**Objetivo:** realizar uma consulta que mostre a data e o título da notícia **e** o nome do autor da notícia.
+
+```sql
+-- Selecionando as colunas indicando as tabelas em que estão
+SELECT
+  noticias.data,
+  noticias.titulo,
+  usuarios.nome
+
+-- Especificamos as tabelas que serão "juntadas/combinadas"
+FROM noticias JOIN usuarios
+
+-- Critério da junção/relação entre as tabelas
+-- Usamos as referências de FK e PK
+ON noticias.usuario_id = usuarios.id;
+```
+
 
 
 
