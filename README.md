@@ -28,7 +28,7 @@ São as páginas contidas na pasta **admin** do projeto:
 - noticia-insere
 - noticia-atualiza
 - noticia-exclui
-- nao-autorizado.
+- nao-autorizado
 
 ### Privilégios de acesso
 
