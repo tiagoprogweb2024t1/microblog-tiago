@@ -22,13 +22,20 @@ if(isset($_POST['atualizar'])){
 	if( empty($_POST['senha']) || 
 		password_verify($_POST['senha'], $dadosUsuario['senha']) ){
 		
-		echo "Não vai mudar a senha...";
+		// Manter a mesma senha (copiamos ela para uma variável)
+		$senha = $dadosUsuario['senha'];
 	} else {
 	/* Caso contrário, pegaremos a senha nova digitada
 	e a CODIFICAREMOS ANTES de mandar/salvar no banco. */
-		echo "Vai mudar a senha...";
+		$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 	}
-}
+
+	// Chamamos/executamos o UPDATE através da função
+	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+
+	// Redirecionamos para a página que mostra todos usuários
+	header("location:usuarios.php");
+} // FIM IF ISSET
 ?>
 
 <div class="row">
