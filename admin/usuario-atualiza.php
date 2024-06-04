@@ -1,7 +1,14 @@
 <?php 
 require_once "../inc/cabecalho-admin.php";
-?>
+require_once "../inc/funcoes-usuarios.php";
 
+/* Pegando o valor do parâmetro id vindo da URL */
+$id = $_GET['id'];
+
+/* Executando a função com o id e recuperando os dados
+do usuário selecionado */
+$dadosUsuario = lerUmUsuario($conexao, $id);
+?>
 
 <div class="row">
 	<article class="col-12 bg-white rounded shadow my-1 py-4">
