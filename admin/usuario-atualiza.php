@@ -8,6 +8,27 @@ $id = $_GET['id'];
 /* Executando a função com o id e recuperando os dados
 do usuário selecionado */
 $dadosUsuario = lerUmUsuario($conexao, $id);
+
+if(isset($_POST['atualizar'])){
+	$nome = $_POST['nome'];
+	$email = $_POST['email'];
+	$tipo = $_POST['tipo'];
+
+	/* Lógica para tratamento da senha 
+	Se o campo da senha estiver vazio OU se a senha digitada for
+	a mesma já existente no banco, então significa que o usuário
+	NÃO ALTEROU A SENHA. Portanto, devemos MANTER a senha
+	existente no banco.	*/
+	if( empty($_POST['senha']) || 
+		password_verify($_POST['senha'], $dadosUsuario['senha']) ){
+		
+		echo "Não vai mudar a senha...";
+	} else {
+	/* Caso contrário, pegaremos a senha nova digitada
+	e a CODIFICAREMOS ANTES de mandar/salvar no banco. */
+		echo "Vai mudar a senha...";
+	}
+}
 ?>
 
 <div class="row">
