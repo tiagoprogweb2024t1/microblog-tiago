@@ -15,7 +15,7 @@ function lerUsuarios($conexao){
     // Comando SQL
     $sql = "SELECT id, nome, tipo, email FROM usuarios";
 
-    // Execução do comando e armazenamento do resultado
+    // Execução do comando e armazenamento do resultado (bruto)
     $resultado = mysqli_query($conexao, $sql) 
                     or die(mysqli_error($conexao));
 
