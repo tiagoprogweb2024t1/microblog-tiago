@@ -1,5 +1,8 @@
-<?php 
+<?php // usuario-insere
 require_once "../inc/cabecalho-admin.php";
+
+// Verificando se o usuário pode acessar esta página
+verificaNivel();
 
 // Importando as funções de manipulação dos usuários
 require_once "../inc/funcoes-usuarios.php";

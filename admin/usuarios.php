@@ -2,6 +2,9 @@
 require_once "../inc/cabecalho-admin.php";
 require_once "../inc/funcoes-usuarios.php";
 
+// Verificando se o usuário pode acessar esta página
+verificaNivel();
+
 /* Chamando a função que carrega/lista/lê os usuários
 e guardando em variável o array que ela retorna */
 $listaDeUsuarios = lerUsuarios($conexao);

@@ -45,4 +45,15 @@ function logout(){
 }
 
 
+function verificaNivel(){
+    /* Se o tipo do usuário logado na sessão NÃO FOR admin
+    (ou seja, se for diferente de admin) */
+    if( $_SESSION['tipo'] != "admin" ){
+        // então, redirecione para nao-autorizado
+        header("location:nao-autorizado.php");
+        exit;
+    }
+}
+
+
 

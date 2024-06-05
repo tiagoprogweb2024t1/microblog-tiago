@@ -1,6 +1,9 @@
-<?php 
+<?php // usuario-atualiza
 require_once "../inc/cabecalho-admin.php";
 require_once "../inc/funcoes-usuarios.php";
+
+// Verificando se o usuário pode acessar esta página
+verificaNivel();
 
 /* Pegando o valor do parâmetro id vindo da URL */
 $id = $_GET['id'];
