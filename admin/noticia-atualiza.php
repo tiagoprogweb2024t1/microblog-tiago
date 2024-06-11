@@ -16,7 +16,6 @@ $dadosNoticia = lerUmaNoticia(
    $idNoticia, $idUsuario, $tipoUsuario, $conexao
 );
 
-
 if(isset($_POST['atualizar'])){
     $titulo = $_POST['titulo'];
     $texto = $_POST['texto'];
@@ -52,7 +51,7 @@ if(isset($_POST['atualizar'])){
             Atualizar dados da notícia
         </h2>
 
-        <form autocomplete="off" class="mx-auto w-75" action="" method="post" id="form-atualizar" name="form-atualizar">
+        <form enctype="multipart/form-data" autocomplete="off" class="mx-auto w-75" action="" method="post" id="form-atualizar" name="form-atualizar">
 
             <div class="mb-3">
                 <label class="form-label" for="titulo">Título:</label>

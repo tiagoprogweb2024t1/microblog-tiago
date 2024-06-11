@@ -92,8 +92,7 @@ function lerUmaNoticia($idNoticia, $idUsuario, $tipoUsuario, $conexao){
 function atualizarNoticia($conexao, $titulo, $texto, $resumo, $imagem, $idNoticia, $idUsuario, $tipoUsuario){
 
     if($tipoUsuario == 'admin'){
-        /* Pode atualizar QUALQUER notícia 
-        (basta saber qual notícia) */
+        /* Pode atualizar QUALQUER notícia (basta saber qual notícia) */
         $sql = "UPDATE noticias SET 
                     titulo = '$titulo',
                     texto = '$texto',
@@ -101,8 +100,7 @@ function atualizarNoticia($conexao, $titulo, $texto, $resumo, $imagem, $idNotici
                     imagem = '$imagem'
                 WHERE id = $idNoticia"; // PRERIGO! 💀
     } else {
-        /* Pode atualizar SOMENTE suas notícias
-        (basta saber qual notícia E qual usuário) */
+        /* Pode atualizar SOMENTE suas notícias (basta saber qual notícia E qual usuário) */
         $sql = "UPDATE noticias SET 
                     titulo = '$titulo',
                     texto = '$texto',
