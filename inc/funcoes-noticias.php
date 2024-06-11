@@ -50,14 +50,20 @@ function inserirNoticia(
 }
 
 function lerNoticias($conexao, $idUsuario, $tipoUsuario){
-    $sql = "SELECT 
-                noticias.id, 
-                noticias.titulo, 
-                noticias.data, 
-                usuarios.nome
+    
+    if($tipoUsuario == 'admin'){
+        // Admin pode ver TUDO
+        $sql = "SELECT noticias.id, noticias.titulo, 
+                noticias.data, usuarios.nome
             FROM noticias JOIN usuarios
             ON noticias.usuario_id = usuarios.id
             ORDER BY data DESC";
+    } else {
+        // Editor pode ver SOMENTE DELE/DELA
+        $sql = "SELECT titulo, data, id FROM noticias
+                WHERE usuario_id = $idUsuario 
+                ORDER BY data DESC";
+    }
 
     $resultado = mysqli_query($conexao, $sql)
                 or die(mysqli_error($conexao));
