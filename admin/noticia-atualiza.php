@@ -16,7 +16,6 @@ $dadosNoticia = lerUmaNoticia(
    $idNoticia, $idUsuario, $tipoUsuario, $conexao
 );
 ?>
-<pre><?=var_dump($dadosNoticia)?></pre>
 
 <div class="row">
     <article class="col-12 bg-white rounded shadow my-1 py-4">
@@ -29,24 +28,27 @@ $dadosNoticia = lerUmaNoticia(
 
             <div class="mb-3">
                 <label class="form-label" for="titulo">Título:</label>
-                <input class="form-control" required type="text" id="titulo" name="titulo">
+                <input 
+                value="<?=$dadosNoticia['titulo']?>" class="form-control" required type="text" id="titulo" name="titulo"> 
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="texto">Texto:</label>
-                <textarea class="form-control" required name="texto" id="texto" cols="50" rows="6"></textarea>
+                <textarea class="form-control" required name="texto" id="texto" cols="50" rows="6"><?=$dadosNoticia['texto']?></textarea>
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="resumo">Resumo (máximo de 300 caracteres):</label>
                 <span id="maximo" class="badge bg-danger">0</span>
-                <textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
+                <textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"><?=$dadosNoticia['resumo']?></textarea>
+
             </div>
 
             <div class="mb-3">
                 <label for="imagem-existente" class="form-label">Imagem da notícia:</label>
                 <!-- campo somente leitura, meramente informativo -->
-                <input class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly>
+                <input 
+                value="<?=$dadosNoticia['imagem']?>" class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly disabled>
             </div>
 
             <div class="mb-3">
