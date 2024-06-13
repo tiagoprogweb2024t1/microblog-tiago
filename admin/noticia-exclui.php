@@ -4,7 +4,7 @@ require "../inc/funcoes-sessao.php";
 
 verificaAcesso();
 
-$idNoticia = $_GET['id'];
+$idNoticia = (int)$_GET['id'];
 $idUsuario = $_SESSION['id'];
 $tipoUsuario = $_SESSION['tipo'];
 

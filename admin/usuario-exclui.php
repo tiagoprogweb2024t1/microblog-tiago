@@ -6,7 +6,7 @@ verificaAcesso();
 verificaNivel();
 
 // Obter (DA URL) o id do usuário que será excluído
-$id = $_GET['id'];
+$id = (int)$_GET['id'];
 
 // Chamar/executar a função que irá fazer o DELETE
 excluirUsuario($conexao, $id);

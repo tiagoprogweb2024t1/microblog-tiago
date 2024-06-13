@@ -3,7 +3,7 @@ require_once "../inc/cabecalho-admin.php";
 require_once "../inc/funcoes-noticias.php";
 
 // Capturando o id da notícia
-$idNoticia = $_GET['id'];
+$idNoticia = (int)$_GET['id'];
 
 // Capturando o id do usuário logado
 $idUsuario = $_SESSION['id'];
