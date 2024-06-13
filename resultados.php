@@ -3,7 +3,11 @@ require "inc/cabecalho.php";
 require "inc/funcoes-noticias.php"; 
 
 /* Capturando via URL/GET o que foi digitado no campo de busca */
-$termoDigitado = $_GET['busca'];
+$termoDigitado = 
+        mysqli_real_escape_string(
+            $conexao, 
+            htmlspecialchars($_GET['busca'])
+        );
 
 /* Executando a função de busca no banco de dados */
 $dadosDaBusca = busca($conexao, $termoDigitado);
