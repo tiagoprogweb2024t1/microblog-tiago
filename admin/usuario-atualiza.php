@@ -13,9 +13,9 @@ do usuário selecionado */
 $dadosUsuario = lerUmUsuario($conexao, $id);
 
 if(isset($_POST['atualizar'])){
-	$nome = $_POST['nome'];
-	$email = $_POST['email'];
-	$tipo = $_POST['tipo'];
+	$nome = htmlspecialchars($_POST['nome']);
+	$email = htmlspecialchars($_POST['email']);
+	$tipo = htmlspecialchars($_POST['tipo']);
 
 	/* Lógica para tratamento da senha 
 	Se o campo da senha estiver vazio OU se a senha digitada for
